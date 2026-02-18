@@ -6,6 +6,51 @@
     <title>Bubble Delegate</title>
 </head>
 <body>
-    
+    <h1>There ara a lot of items under listed</h1>
+    <ol id="item-list">
+        <li class="item">My secret item-1</li>
+        <li class="item">My secret item-2</li>
+        <li class="item">My secret item-3</li>
+        <li class="item">My secret item-4</li>
+        <li class="item">My secret item-5</li>
+        <li class="item">My secret item-6</li>
+    </ol>
+    <section>
+        <button id="add-btn">Add New Item</button>
+    </section>
+
+    <script>
+
+        //ata o thik but ata diye shudhu parent er 6 ta list e remove hobe. but new item gula remove hobena
+        
+        // const list = document.getElementsByClassName('item');
+        // for(const items of list){
+        //     items.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        // new item gula keo remove korar upai
+        document.getElementById('item-list').addEventListener('click',function(event){
+            event.target.parentNode.removeChild(event.target);
+        })
+
+
+        //new list add with btn
+        document.getElementById('add-btn').addEventListener('click',function(){
+           //find parent node
+           const parent = document.getElementById('item-list');
+           console.log(parent);
+
+           //add child
+            const newChild = document.createElement('li');
+            newChild.classList.add('item');
+            newChild.innerText = 'Brand new item';
+
+            //append child 
+            parent.appendChild(newChild);
+        })
+
+    </script>
 </body>
 </html>
